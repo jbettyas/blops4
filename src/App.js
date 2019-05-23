@@ -4,10 +4,14 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand,Nav, NavItem, NavLink } from 'reactstrap';
 import Home from './components/home';
 import Alcatraz from './components/alcatraz';
-import Quads from './components/quads';
-import Duos from './components/duos';
-import Solos from './components/solos';
+import Locations from './components/locations';
 import navlogo from './logo.png';
+import { SOLOS } from './shared/solos';
+import { DUOS } from './shared/duos';
+import { QUADS } from './shared/quads';
+//import Quads from './components/quads';
+//import Duos2 from './components/duos';
+//import Solos2 from './components/solos';
 
 class App extends Component {
 
@@ -16,7 +20,7 @@ class App extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
@@ -42,16 +46,16 @@ class App extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink tag={Link} to="/alcatraz" className="underlink" onClick={this.toggle}>Alcatraz</NavLink>
+                  <NavLink tag={Link} to="/alcatraz" className="underlink">Alcatraz</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/quads" className="underlink" onClick={this.toggle}>Quads</NavLink>
+                  <NavLink tag={Link} to={{pathname: "/quads", state: { gametype: QUADS } }} className="underlink">Quads</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/duos" className="underlink" onClick={this.toggle}>Duos</NavLink>
+                  <NavLink tag={Link} to={{pathname: "/duos", state: { gametype: DUOS } }} className="underlink">Duos</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/solos" className="underlink" onClick={this.toggle}>Solos</NavLink>
+                  <NavLink tag={Link} to={{pathname: "/solos", state: { gametype: SOLOS } }} className="underlink">Solos</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
@@ -59,9 +63,9 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Home} />
             <Route path="/alcatraz" component={Alcatraz} />
-            <Route path="/quads" component={Quads} />
-            <Route path="/duos" component={Duos} />
-            <Route path="/solos" component={Solos} />
+            <Route path="/quads" component={Locations} />
+            <Route path="/duos" component={Locations} />
+            <Route path="/solos" component={Locations} />
           </div>
           </div>
         </Router>

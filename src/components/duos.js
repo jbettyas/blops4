@@ -5,7 +5,7 @@ import { DUOS } from '../shared/duos';
 import { Button, Row, Col } from 'reactstrap';
 
 
-class Duos extends Component {
+class Duos2 extends Component {
 
   constructor(props) {
     super(props);
@@ -77,10 +77,6 @@ class Duos extends Component {
       }
   }
 
-  //var jumpplace = this.state.result !== "" ? <h2>{this.state.result[0]}</h2> : <h2>&nbsp;</h2>;
-  //var jumpplacesub = this.state.result[1] !== "" ? <h2>{this.state.result[1]}</h2> : <h2>{this.state.result[2]}</h2>;
-  //var jumpplacegrid = this.state.result[1] !== "" ? <h2>{this.state.result[2]}</h2> : <h2>&nbsp;</h2>;
-
     return (
       <div className="app">
         <div className ="App-header">
@@ -105,4 +101,4 @@ class Duos extends Component {
   }
 }
 
-export default Duos;
+export default Duos2;
