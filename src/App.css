@@ -2,10 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.nav-theme {
+  border-bottom: 1px solid #F4711F;
+}
+
+.home-theme {
+  border-bottom: 1px solid #F4711F;
+  border-top: 1px solid #F4711F;
+  padding: 5px 0px 5px 0px;
 }
 
 .App-header {
@@ -14,7 +18,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Page-content {
+  background-color: #282c34;
+  min-height: 100vh;
+  align-items: center;
+  /*justify-content: center;*/
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -23,11 +36,64 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width: 1000px) {
+  .img-logo {
+     /*background-image:url('http://www.part-box.com/images/yellow-frog.png');*/
+      height: 300px;
+      background-repeat: no-repeat;
+      background-size: cover;
+        }
+}
+
+@media screen and (max-width: 300px) {
+  .img-logo {
+     /*background-image:url('http://www.part-box.com/images/yellow-frog.png');*/
+      height: 100px;
+      background-repeat: no-repeat;
+      background-size: cover;
+        }
+}
+
+.orange-text {
+  color: #F4711F;
+}
+
+.row-content {
+  padding: 30px 0px 30px 0px;
+}
+
+.button-bottom {
+  padding: 0px 0px 20px 0px;
+}
+
+/* Link animation */
+.underlink {
+  color: #fff;
+  text-decoration: none;    
+  position: relative;
+}
+
+.underlink:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.underlink:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #F4711F;
+  color: #f4f4f4; 
+  cursor: pointer;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.underlink:hover:after { 
+  width: 100%; 
+  left: 0; 
+  color: #f4f4f4; 
+  cursor: pointer;
 }
